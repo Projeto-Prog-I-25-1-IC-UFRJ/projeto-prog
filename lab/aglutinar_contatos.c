@@ -14,6 +14,7 @@ contatos repetidos (com um mesmo nome fornecido), com um número para cada um. O
 então escolher os dois números dos contatos que deseja aglutinar.*/
 
 #include <string.h>
+#include <stdio.h>
 
 // struct de contatos como exemplo
 
@@ -28,38 +29,39 @@ typedef struct {
 } contato;
 
 void aglutinar_contato(contato contatos[], int i1, int i2){
-    // strcmp()
-    if (contatos[i2].t1 != contatos[i1].t1 && contatos[i2].t1 != contatos[i1].t2 && contatos[i2].t1 != contatos[i1].t3){
-        if(contatos[i1].t1[0] == '\0'){
-            strcpy(contatos[i1].t1, contatos[i2].t1);
-        }
-        if(contatos[i1].t2[0] == '\0'){
-            strcpy(contatos[i1].t2, contatos[i2].t1);
-        }
-        if(contatos[i1].t3[0] == '\0'){
-            strcpy(contatos[i1].t3, contatos[i2].t1);
-        }}
-    if (contatos[i2].t2 != contatos[i1].t1 && contatos[i2].t2 != contatos[i1].t2 && contatos[i2].t2 != contatos[i1].t3){
-        if(contatos[i1].t1[0] == '\0'){
-            strcpy(contatos[i1].t1, contatos[i2].t2);
-        }
-        if(contatos[i1].t2[0] == '\0'){
-            strcpy(contatos[i1].t2, contatos[i2].t2);
-        }
-        if(contatos[i1].t3[0] == '\0'){
-            strcpy(contatos[i1].t3, contatos[i2].t2);
-        }}
-    if (contatos[i2].t3 != contatos[i1].t1 && contatos[i2].t3 != contatos[i1].t2 && contatos[i2].t3 != contatos[i1].t3){
-        if(contatos[i1].t1[0] == '\0'){
-            strcpy(contatos[i1].t1, contatos[i2].t3);
-        }
-        if(contatos[i1].t2[0] == '\0'){
-            strcpy(contatos[i1].t2, contatos[i2].t3);
-        }
-        if(contatos[i1].t3[0] == '\0'){
-            strcpy(contatos[i1].t3, contatos[i2].t3);
-        }}
-    
+    if (strcmp(contatos[i2].t1, contatos[i1].t1) != 0 &&
+        strcmp(contatos[i2].t1, contatos[i1].t2) != 0 &&
+        strcmp(contatos[i2].t1, contatos[i1].t3) != 0){
+        if(contatos[i1].t1[0] == '\0') {
+            strcpy(contatos[i1].t1, contatos[i2].t1); }
+        else if(contatos[i1].t2[0] == '\0') {
+            strcpy(contatos[i1].t2, contatos[i2].t1); }
+        else if(contatos[i1].t3[0] == '\0') {
+            strcpy(contatos[i1].t3, contatos[i2].t1); }
+    }
+
+    if (strcmp(contatos[i2].t2, contatos[i1].t1) != 0 &&
+        strcmp(contatos[i2].t2, contatos[i1].t2) != 0 &&
+        strcmp(contatos[i2].t2, contatos[i1].t3) != 0){
+        if(contatos[i1].t1[0] == '\0') {
+            strcpy(contatos[i1].t1, contatos[i2].t2); }
+        else if(contatos[i1].t2[0] == '\0') { 
+            strcpy(contatos[i1].t2, contatos[i2].t2); }
+        else if(contatos[i1].t3[0] == '\0') {
+            strcpy(contatos[i1].t3, contatos[i2].t2); }
+    }
+
+    if (strcmp(contatos[i2].t3, contatos[i1].t1) != 0 &&
+        strcmp(contatos[i2].t3, contatos[i1].t2) != 0 &&
+        strcmp(contatos[i2].t3, contatos[i1].t3) != 0){
+        if(contatos[i1].t1[0] == '\0') {
+            strcpy(contatos[i1].t1, contatos[i2].t3); }
+        else if(contatos[i1].t2[0] == '\0') { 
+            strcpy(contatos[i1].t2, contatos[i2].t3); }
+        else if(contatos[i1].t3[0] == '\0') {
+            strcpy(contatos[i1].t3, contatos[i2].t3); }
+    }
+
     if(contatos[i1].email[0] == '\0'){
         strcpy(contatos[i1].email, contatos[i2].email);
    }
@@ -67,29 +69,29 @@ void aglutinar_contato(contato contatos[], int i1, int i2){
         strcpy(contatos[i1].insta, contatos[i2].insta);
     }
 
-   excluir_contato(i2);
-
-   // temos que fazer a interface que com a busca de noms iguais, o usuario escolhe quais aglutinar!!
+   excluir_contato(i2); // função de exclusão de contatos
 
 }
 
-// buscacontatos retorna vetor que tem contatos iguais ao nome do indeice passado
+// buscacontatos retorna vetor que tem contatos iguais ao nome passado e seus respectivos indices
 contato[] busca_contato(contato lista[], char nome[]);
 int tam_contatos(contato lista[]);
 int idx_contato(contato lista[], contato c);
 
+
 void tela(contato lista[], int tam) {
+    int i1, i2;
     for (int i = 0; i < tam; i++) {
         contato ctts[] = busca_contato(lista, lista[i].nome);
         if (tam_contatos(ctts) > 1){
             for (int j = 0 ; j < tam_contatos(ctts); j++){
                 printf("%d", idx_contato(lista, ctts[i]));
-                printf ("%s", ctts[i].nome)
+                printf ("%s", ctts[i].nome);
             }
         }
     }
 
-    print digite os indices que quer aglutinar_contato
-    scanf // scaneia indices 
-    aglutinar_contato()
+    printf("\nDigite os índices dos contatos que deseja aglutinar");
+    scanf ("%d %d", &i1, &i2);
+    aglutinar_contato(lista, i1, i2);
 }
