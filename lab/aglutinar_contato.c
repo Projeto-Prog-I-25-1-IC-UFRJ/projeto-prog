@@ -28,7 +28,7 @@ typedef struct {
     int acessos;
 } contato;
 
-int excluir_contato(contato lista[], int tam, int indice){ // função de excluir contatos de outro grupo
+int excluir_contato(contato lista[], int tam, int indice); // função de excluir contatos de outro grupo
 
 // Função aglutinar contatos
 
