@@ -5,6 +5,11 @@
 
 typedef struct {
     char nome[TAMANHO];
+    char telefone1[TAMANHO];
+    char telefone2[TAMANHO];
+    char telefone3 [TAMANHO];
+    char email[TAMANHO];
+    char instagram[TAMANHO];
     int acessos;
 
 } lista_contatos;
@@ -51,6 +56,7 @@ int nomes_iguais(int indice){
 
 
 int main(){
+  //captura de valores para teste:
     int numero_contatos = 0;
     printf("Digite o número de contatos: \n");
     scanf("%d", &numero_contatos);
@@ -72,7 +78,7 @@ int main(){
 
     }
 
-
+//implentação das funções:
         char nome[TAMANHO];
         int indice;
         printf("Digite o nome (ou a parte inicial) do contato procurado:\n");
@@ -85,12 +91,7 @@ int main(){
             }
         }
 
-        printf("Nome: %s", nome);
-
-        // tá certo!
-
         indice = busca_contato(nome);
-        printf("\nIndice = %d", indice);
 
         if (indice == -1){
             puts ("\nNao ha contatos com esse nome");
@@ -99,16 +100,18 @@ int main(){
 
         int numero;
         numero = nomes_iguais(indice);
-        printf("\nNumero = %d", numero);
-    
 
         for (int i=indice; i<(indice+numero); i++){
             
             printf("\n(%d) %s", i, contato[i].nome);
+            printf("\nTel1: %s", contato[i].telefone1);
+            printf("\nTel2: %s",  contato[i].telefone2);
+            printf("\nTel3: %s", contato[i].telefone3);
+            printf("\nE-mail: %s", contato[i].email);
+            printf("\nInsta: %s", contato[i].instagram);
+            printf("\nAcessos: %d", contato[i].acessos);
         }
 
     return 0;
-
 }
-
 
