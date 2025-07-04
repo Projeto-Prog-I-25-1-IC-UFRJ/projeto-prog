@@ -16,23 +16,23 @@ struct Contato agenda[MAX_CONTATOS];
 int totalContatos = 0; 
 
 
-// Função para adicionar o dígito '9' a números de telefone que não o tenham
+// Função para adicionar o dígito 9 a números de telefone que não o tenham
 int adicionarNove(int quantidadeDigitos) {
     int telefonesModificados = 0; // Contador para o número de telefones que foram modificados.
     struct Contato aux[MAX_CONTATOS]; // vetor auxiliar para armazenar temporariamente dados dos contatos.
 
-    // Vetores para marcar quais números de telefone (1, 2 ou 3) de cada contato são telefones fixos.
+    // Vetores para marcar quais dos números de telefone contato são telefones fixos.
     int tel_fixos1[MAX_CONTATOS];
     int tel_fixos2[MAX_CONTATOS];
     int tel_fixos3[MAX_CONTATOS];
-ar
+
     // Inicializa os marcadores de telefone fixo com 0.
     for(int i = 0; i < MAX_CONTATOS; i++) {
         tel_fixos1[i] = 0;
     }
     // Percorre todos os contatos para verificar se o telefone1 é um telefone fixo.
     for(int i = 0; i < totalContatos; i++) {
-        if(agenda[i].telefone1[0] >= '6') // Assume que números de celular começam com '6' ou um dígito maior.
+        if(agenda[i].telefone1[0] >= '6') // Assumimos que números de celular começam com '6' ou um dígito maior.
             continue; // Pula se o número parecer ser de celular.
         else {
             strcpy(aux[i].telefone1, agenda[i].telefone1); // Copia o número fixo para o vetor auxiliar.
@@ -64,12 +64,12 @@ ar
         }
     }
 
-    // Percorre todos os contatos para adicionar '9' aos números de telefone, se necessário.
+    // Percorre todos os contatos para adicionar 9 aos números de telefone, se necessário.
     for (int i = 0; i < totalContatos; i++) {
-        // Verifica se telefone1 existe e se seu comprimento é menor que 'quantidadeDigitos'.
+        // Verifica se telefone1 existe e se seu comprimento é menor que a quantidade de dígitos padrão de um número de celular.
         if (strlen(agenda[i].telefone1) > 0 && strlen(agenda[i].telefone1) < quantidadeDigitos) {
             char numeroAtualizado[20]; // Buffer para o número atualizado.
-            strcpy(numeroAtualizado, "9"); // Começa o novo número com '9'.
+            strcpy(numeroAtualizado, "9"); // Começa o novo número com 9.
             strcat(numeroAtualizado, agenda[i].telefone1); // Concatena o número original.
             strcpy(agenda[i].telefone1, numeroAtualizado); // Atualiza o telefone do contato.
             telefonesModificados++; // Incrementa o contador de telefones modificados.
