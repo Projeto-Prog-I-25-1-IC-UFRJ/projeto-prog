@@ -73,7 +73,7 @@ void aglutinar_contatinho(int i1, int i2)
         strcpy(agenda[i1].instagram, agenda[i2].instagram);
     }
     agenda[i1].acessos += agenda[i2].acessos;
-    //excluir_um_contato(i2);
+    excluir_um_contato(i2);
     printf("==========Concluido com sucesso==========\n\n");
     printf("Aqui estao as informacoes atualizadas:\nNome:%s\nTelefone 1:%s\nTelefone 2:%s\nTelefone 3:%s\nE-mail:%s\nInstagram:%s\nAcessos:%d\n\n", agenda[i1].nome, agenda[i1].telefone1, agenda[i1].telefone2, agenda[i1].telefone3, agenda[i1].email, agenda[i1].instagram, agenda[i1].acessos);
 }
