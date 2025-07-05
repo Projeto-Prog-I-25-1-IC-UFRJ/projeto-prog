@@ -1,3 +1,6 @@
+/* FUNÇÃO 1 */
+/* JOAO PEDRO COSTA e LEONARDO TERRES */
+
 #include <stdio.h>
 #include <string.h>
 

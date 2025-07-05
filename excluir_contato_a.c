@@ -1,3 +1,6 @@
+/* FUNÇÃO 5 */
+/* NICOLAS BRAYAN (AL) e ARTHUR BASSOTTO (MG) */
+
 //Projeto final
 #include <stdio.h>
 #include <string.h>

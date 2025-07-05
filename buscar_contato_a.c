@@ -1,3 +1,6 @@
+/* FUNÇÃO 3 */
+/* LUCAS DOTTO DE OLIVEIRA e GUILHERME DE SOUZA BARAUNA */
+
 #include <stdio.h>
 #include <string.h>
 typedef struct {

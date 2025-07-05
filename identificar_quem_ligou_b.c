@@ -1,3 +1,6 @@
+/* FUNÇÃO 4 */
+/* RYAN DIAS e BERNARDO MAIA */
+
 #include <stdio.h>
 #include <string.h>
 

@@ -1,3 +1,6 @@
+/* FUNÇÃO 5 */
+/* GABRIEL RESENDE e MARIA EDUARDA */
+
 #include <stdio.h>
 
 struct Contato {};

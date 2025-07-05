@@ -1,3 +1,6 @@
+/* FUNÇÃO 6 */
+/* RYAN BRAGA e PEDRO BAVIER */
+
 #include <stdio.h>
 #include <string.h>
 #define N 50

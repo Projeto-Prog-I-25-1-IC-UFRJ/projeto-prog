@@ -1,3 +1,6 @@
+/* FUNÇÃO 1 */
+/* LUYDGI BARBOSA e PEDRO BINOTO */
+
 #include <stdio.h>
 #include <string.h>
 

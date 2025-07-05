@@ -1,3 +1,6 @@
+/* FUNÇÃO 6 */
+/* JULIANA SALARINI DE SOUZA E MELLO e MANUELA NUNES DOS SANTOS */
+
 /*(6) Aglutinar dois contatos.
 ● Essa função está sendo criada para ser usada caso o usuário perceba que, por engano, salvou duas
 vezes o mesmo contatinho na agenda. Ela deve receber dois índices, correspondentes às posições no

@@ -1,3 +1,6 @@
+/* FUNÇÃO 2 */
+/* JOAO MIGUEL SALES DE ALENAR e ALEXANDRE RIMES BANDEIRA */
+
 #include<stdio.h>
 #include<string.h>
 typedef struct Tcadastro{

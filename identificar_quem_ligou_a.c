@@ -1,3 +1,6 @@
+/* FUNÇÃO 4 */
+/* LETICIA PESSÔA e ISABEL ALENCAR */
+
 #include <stdio.h>
 #include <string.h>
 typedef struct{ //substituir com função do criar contato

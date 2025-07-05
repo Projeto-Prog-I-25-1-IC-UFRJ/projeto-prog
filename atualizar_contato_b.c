@@ -1,3 +1,6 @@
+/* FUNÇÃO 2 */
+/* ELIANE PEREIRA DOS SANTOS e BEATRIZ PEREIRA DE JESUS SANTOS */
+
 /******************************************************************************
 
                             Online C Compiler.
