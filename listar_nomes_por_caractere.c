@@ -1,3 +1,6 @@
+// Autores: Taylor Horta e Guilherme Brito ////
+
+
 #include <stdio.h>
 
 typedef struct{
