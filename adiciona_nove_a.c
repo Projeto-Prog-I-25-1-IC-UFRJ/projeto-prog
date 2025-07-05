@@ -1,3 +1,6 @@
+/* FUNÇÃO 7 */
+/* GENARO SANTOS DA SILVA JUNIOR e ANDREY VITOR DE PAULA CORREA */
+
 #include <stdio.h> 
 #include <string.h>
 // Define a estrutura Contato para armazenar as informações de cada contato.
