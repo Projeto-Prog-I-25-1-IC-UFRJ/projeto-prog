@@ -1,3 +1,6 @@
+/* FUNÇÃO 9 */
+/* NICOLAS GOMES e BERNARDO MAGNO */
+
 #include <stdio.h>
 #include <stdlib.h> 
 #include <string.h> 

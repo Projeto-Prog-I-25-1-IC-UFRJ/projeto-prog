@@ -1,3 +1,6 @@
+/* FUNÇÃO 9 */
+/* LEONARDO OLIVEIRA e GABRIEL MAIA */
+
 #include <stdio.h>
 #include <string.h>
 
