@@ -1,7 +1,5 @@
 /* FUNÇÃO 3 */
-/*
-BERNARDO DOS SANTOS DE SANTANA, THIAGO RICHARD FURTADO ALVES e LUCAS DANIEL
-*/
+/* FERNANDO GUERRA e GABRIELA LIMA */
 
 #include <string.h>
 #include <stdio.h>

@@ -1,3 +1,7 @@
+/* FUNÇÃO 3 */
+/* BERNARDO DOS SANTOS DE SANTANA, THIAGO RICHARD FURTADO ALVES
+ * e LUCAS DANIEL */
+
 #include<stdio.h>
 #include<string.h>
 
