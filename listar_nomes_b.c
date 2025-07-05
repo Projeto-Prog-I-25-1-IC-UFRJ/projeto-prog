@@ -1,3 +1,6 @@
+/* FUNÇÃO 8 */
+/* RENATO VILLARDI MORAES e EVANDRO RHARI */
+
 /*
 Autor: Evandro Rhari & Renato Villardi Moraes
 Data: 02/07/2025

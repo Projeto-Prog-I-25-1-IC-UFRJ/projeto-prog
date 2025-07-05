@@ -1,3 +1,6 @@
+/* FUNÇÃO 8 */
+/* TAYLOR HORTA E GUILHERME BRITO */
+
 ////Autores: Taylor Horta e Guilherme Brito //////
 
 #include <stdio.h>
