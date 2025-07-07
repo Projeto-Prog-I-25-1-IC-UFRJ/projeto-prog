@@ -35,6 +35,16 @@ Funciona perfeitamente.
 
 Deveria funcionar, mas a lista de contatos não está sendo ordenada, então não funciona. Não há qualquer erro visível no código, e assumir que a lista está ordernada estaria correto de acordo com o enunciado, mas infelizmente nenhum grupo implementou a funcionalidade de reordenar a lista nas funções que manipulam o vetor e, portanto, o código não funciona.
 
+## Função 4
+
+### `identificar_quem_ligou_a`
+
+Funciona perfeitamente, mas precisou ser alterada para retornar a string em vez de printar na tela
+
+### `identificar_quem_ligou_b`
+
+Funciona, mas não verifica o número por completo. Por exemplo, se tivermos números "91234" e "9123" e eu passar "9123" ele vai retornar o "91234" se ele vier primeiro, em vez de achar o número exato, ele vê só o começo.
+
 ## Função 7
 
 ### `adiciona_nove_a`
