@@ -72,22 +72,6 @@ Contato* listarCincoMaisAcessados(int* num_retornados) {
     return cinco_mais_acessados_final;
 }
 
-// Função auxiliar para criar um novo contato de forma simplificada para teste
-void criarContatoTeste(const char* nome, const char* tel1, const char* email, int acessos) {
-    if (total_contatos < MAX_CONTATOS) {
-        strcpy(agenda[total_contatos].nome, nome);
-        strcpy(agenda[total_contatos].telefone1, tel1);
-        strcpy(agenda[total_contatos].telefone2, ""); 
-        strcpy(agenda[total_contatos].telefone3, ""); 
-        strcpy(agenda[total_contatos].email, email);
-        strcpy(agenda[total_contatos].instagram, ""); 
-        agenda[total_contatos].numero_acessos = acessos;
-        total_contatos++;
-    } else {
-        printf("Agenda cheia! Nao foi possivel adicionar '%s'.\n", nome);
-    }
-}
-
 // Função main para demonstrar e testar a funcionalidade.
 int main() {
     // Carga de dados de exemplo.
