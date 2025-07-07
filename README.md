@@ -21,6 +21,20 @@ Tenta fazer coisas desnecessárias (que não foram pedidas no enunciado) e, por 
 
 Funciona perfeitamente.
 
+## Função 3
+
+### `buscar_contato_a`
+
+Funciona perfeitamente.
+
+### `buscar_contato_b`
+
+Funciona perfeitamente.
+
+### `deveriafuncionar/buscar_contato_c`
+
+Deveria funcionar, mas a lista de contatos não está sendo ordenada, então não funciona. Não há qualquer erro visível no código, e assumir que a lista está ordernada estaria correto de acordo com o enunciado, mas infelizmente nenhum grupo implementou a funcionalidade de reordenar a lista nas funções que manipulam o vetor e, portanto, o código não funciona.
+
 ## Função 7
 
 ### `adiciona_nove_a`
