@@ -1,3 +1,4 @@
+#include <stdio.h>
 #include <string.h>
 
 #include <prog/tipos.h>
@@ -19,11 +20,14 @@ int main() {
     criar_contato("Helena Almeida", "910111213", "", "", "helena@email.com", "");
     criar_contato("Igor Rodrigues", "914151617", "", "", "igor@email.com", "");
 
-    atualizar_contato(1, 1, "Ana Silveira");
+    atualizar_contato(1, 1, "Carlos Lima");
 
     for (int i = 0; i < num_contatinhos; i++) {
         printar_contato(contatinhos[i]);
     }
+
+    printf("%d\n", buscar_contato("Diana"));
+    printf("%d\n", numero_de_contatos_iguais(0));
 
     return 0;
 }
