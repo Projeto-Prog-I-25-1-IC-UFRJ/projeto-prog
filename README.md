@@ -76,3 +76,15 @@ Funciona perfeitamente.
 
 - Adiciona o 9 a qualquer número com menos dígitos
 - Strings vazias viram "9"
+
+## Função 8
+
+### `listar_nomes_a`
+
+Funcionando perfeitamente.
+
+exclamodio?
+
+### `listar_nomes_b`
+
+Funcionando perfeitamente.
