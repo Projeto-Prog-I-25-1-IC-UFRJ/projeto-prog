@@ -88,3 +88,13 @@ exclamodio?
 ### `listar_nomes_b`
 
 Funcionando perfeitamente.
+
+## Função 9
+
+### `listar_cinco_contatos_a`
+
+Funcionando perfeitamente.
+
+### `listar_cinco_contatos_b`
+
+Funcionando perfeitamente.
