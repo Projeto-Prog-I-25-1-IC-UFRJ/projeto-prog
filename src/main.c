@@ -26,8 +26,6 @@ int main() {
         printar_contato(contatinhos[i]);
     }
 
-    printf("%d\n", buscar_contato("Diana"));
-    printf("%d\n", numero_de_contatos_iguais(0));
 
     return 0;
 }
