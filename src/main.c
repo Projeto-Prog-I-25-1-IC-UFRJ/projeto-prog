@@ -22,11 +22,12 @@ int main() {
 
     atualizar_contato(1, 1, "Carlos Lima");
 
-    aglutinar_contatos(0, 1);
 
     for (int i = 0; i < num_contatinhos; i++) {
         printar_contato(contatinhos[i]);
     }
+
+    listar_nomes('a');
 
 
     return 0;

@@ -5,13 +5,14 @@
 
 #include <stdio.h>
 
-typedef struct{
-    char nome[50];
-} Contato;
+#include <prog/tipos.h>
 
 //entrada: o caractere a ser procurado(não faz diferença se for maiúsculo ou minúsculo), o vetor de contatos preenchidos da struct e o tamanho desse vetor
 //saída: a lista de nomes com o caractere especificado
-void procurar(char l, Contato cont[], int t){
+void listar_nomes(char l){
+    Contato *cont = contatinhos;
+    int t = num_contatinhos;
+
     if(l == '?'){
         puts("- exclamodio da silva \n");
         return;
