@@ -14,3 +14,5 @@ char *quem_ligou(char numero[]);
 
 int exclui_contato(int indice);
 
+void aglutinar_contatos(int i1, int i2);
+
