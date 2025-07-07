@@ -3,24 +3,14 @@
 
 #include <stdio.h> 
 #include <string.h>
-// Define a estrutura Contato para armazenar as informações de cada contato.
-struct Contato {
-    char nome[50];
-    char telefone1[20];
-    char telefone2[20];
-    char telefone3[20];
-    char email[50];
-    char instagram[50];
-    int numeroAcessos;
-};
 
-#define MAX_CONTATOS 255 
-struct Contato agenda[MAX_CONTATOS];
-int totalContatos = 0; 
+#include <prog/tipos.h>
 
+#define agenda contatinhos
+#define totalContatos num_contatinhos
 
 // Função para adicionar o dígito 9 a números de telefone que não o tenham
-int adicionarNove(int quantidadeDigitos) {
+int adicionar_nove(unsigned int quantidadeDigitos) {
     int telefonesModificados = 0; // Contador para o número de telefones que foram modificados.
     struct Contato aux[MAX_CONTATOS]; // vetor auxiliar para armazenar temporariamente dados dos contatos.
 
@@ -107,7 +97,7 @@ int adicionarNove(int quantidadeDigitos) {
     // Repete a lógica para o terceiro telefone.
     for(int i = 0; i < totalContatos; i++) {
         if(tel_fixos3[i] != 0)
-            strcpy(agenda[i].telefone3, aux[i].telefovetor
+            strcpy(agenda[i].telefone3, aux[i].telefone3);
     }
 
     return telefonesModificados; // Retorna o número total de telefones modificados.

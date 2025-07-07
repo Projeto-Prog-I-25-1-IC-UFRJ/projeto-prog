@@ -16,7 +16,7 @@ no qual telefone1[], telefone2[] e telefone3[] sao membros do struct, com tipo s
 #include <stdio.h>
 #include <string.h>
 
-int add_nove(int digitos){
+int adicionar_nove(int digitos){
 
     // declarando int de retorno (contagem)
     int count = 0;
