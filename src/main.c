@@ -19,7 +19,7 @@ int main() {
     criar_contato("Helena Almeida", "910111213", "", "", "helena@email.com", "");
     criar_contato("Igor Rodrigues", "914151617", "", "", "igor@email.com", "");
 
-
+    atualizar_contato(1, 1, "Ana Silveira");
 
     for (int i = 0; i < num_contatinhos; i++) {
         printar_contato(contatinhos[i]);
