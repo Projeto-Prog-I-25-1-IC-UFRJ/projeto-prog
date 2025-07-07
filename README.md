@@ -55,6 +55,16 @@ Funciona perfeitamente.
 
 Funciona perfeitamente.
 
+## Função 6
+
+### `aglutinar_contatos_a`
+
+Funciona perfeitamente.
+
+### `aglutinar_contatos_b`
+
+Funciona perfeitamente.
+
 ## Função 7
 
 ### `adiciona_nove_a`
