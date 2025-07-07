@@ -11,6 +11,16 @@ Funciona, mas não verifica se o `nome` não é vazio.
 
 Funciona perfeitamente.
 
+## Função 2
+
+### `naofunciona/atualizar_contato_a`
+
+Tenta fazer coisas desnecessárias (que não foram pedidas no enunciado) e, por conta disso, é mais vulnerável a erros. Várias coisas não funcionam, por exemplo, não é possível alterar o nome, simplesmente não faz nada.
+
+### `atualizar_contato_b`
+
+Funciona perfeitamente.
+
 ## Função 7
 
 ### `adiciona_nove_a`
