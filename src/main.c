@@ -9,15 +9,15 @@ size_t num_contatinhos = 0;
 
 
 int main() {
-    criar_contato_teste("Carlos Lima", "976543210", "carlos@email.com", 20);
-    criar_contato_teste("Ana Silva", "8765-4321", "ana@email.com", 15);
-    criar_contato_teste("Diana Souza", "12345678", "diana@email.com", 12);
-    criar_contato_teste("Fernanda Oliveira", "956781234", "fer@email.com", 10);
-    criar_contato_teste("Bruno Costa", "98877665", "bruno@email.com", 8);
-    criar_contato_teste("Gustavo Pereira", "909090909", "guga@email.com", 7);
-    criar_contato_teste("Eduardo Santos", "34567890", "eduardo@email.com", 3);
-    criar_contato_teste("Helena Almeida", "910111213", "helena@email.com", 2);
-    criar_contato_teste("Igor Rodrigues", "914151617", "igor@email.com", 1);
+    criar_contato("Carlos Lima", "976543210", "12345678", "", "carlos@email.com", "@carlosrj");
+    criar_contato("Ana Silva", "8765-4321", "", "", "ana@email.com", "");
+    criar_contato("Diana Souza", "12345678", "", "", "diana@email.com", "");
+    criar_contato("Fernanda Oliveira", "956781234", "", "", "fer@email.com", "");
+    criar_contato("Bruno Costa", "98877665", "", "", "bruno@email.com", "");
+    criar_contato("Gustavo Pereira", "909090909", "", "", "guga@email.com", "");
+    criar_contato("Eduardo Santos", "34567890", "", "", "eduardo@email.com", "");
+    criar_contato("Helena Almeida", "910111213", "", "", "helena@email.com", "");
+    criar_contato("Igor Rodrigues", "914151617", "", "", "igor@email.com", "");
 
 
 
