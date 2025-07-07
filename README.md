@@ -45,6 +45,16 @@ Funciona perfeitamente, mas precisou ser alterada para retornar a string em vez 
 
 Funciona, mas não verifica o número por completo. Por exemplo, se tivermos números "91234" e "9123" e eu passar "9123" ele vai retornar o "91234" se ele vier primeiro, em vez de achar o número exato, ele vê só o começo.
 
+### Função 5
+
+### `excluir_contato_a`
+
+Funciona perfeitamente.
+
+### `excluir_contato_b`
+
+Funciona perfeitamente.
+
 ## Função 7
 
 ### `adiciona_nove_a`
