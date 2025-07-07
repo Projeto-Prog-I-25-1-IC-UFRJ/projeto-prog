@@ -1,3 +1,6 @@
+/* FUNÇÃO 7 */
+/* JOAO RODRIGO DIAS COSTA e JOAO PEDRO MORENO MACHADO */
+
 /*
 Autor: Joao Rodrigo Dias Costa e João Pedro Moreno Machado
 Data: 02/07/2025
