@@ -18,3 +18,5 @@ int adicionar_nove(unsigned int quantidade_digitos);
 
 void listar_nomes(char letra);
 
+int cinco_contatos(Contato top5[5]);
+

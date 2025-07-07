@@ -21,14 +21,22 @@ int main() {
     criar_contato("Igor Rodrigues", "914151617", "", "", "igor@email.com", "");
 
     atualizar_contato(1, 1, "Carlos Lima");
+    contatinhos[3].num_acessos = 3;
 
 
     for (int i = 0; i < num_contatinhos; i++) {
         printar_contato(contatinhos[i]);
     }
 
-    listar_nomes('a');
+    Contato top5[5];
 
+    int numero = cinco_contatos(top5);
+
+    printf("\n\n%d\n\n", numero);
+
+    for (int i = 0; i < numero; i++) {
+        printar_contato(top5[i]);
+    }
 
     return 0;
 }
