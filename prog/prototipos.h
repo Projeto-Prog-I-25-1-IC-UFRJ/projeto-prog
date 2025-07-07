@@ -12,3 +12,5 @@ int buscar_contato(char busca[]);
 int numero_de_contatos_iguais(int indice);
 char *quem_ligou(char numero[]);
 
+int exclui_contato(int indice);
+
