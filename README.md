@@ -1,6 +1,16 @@
 # projeto-prog
 O Projeto Final de Programação de Computadores I do período 2025.1
 
+## Função 1
+
+### `criar_contato_a`
+
+Funciona, mas não verifica se o `nome` não é vazio.
+
+### `criar_contato_b`
+
+Funciona perfeitamente.
+
 ## Função 7
 
 ### `adiciona_nove_a`
