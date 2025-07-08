@@ -13,7 +13,7 @@ Funciona perfeitamente.
 
 ## Função 2
 
-### `naofunciona/atualizar_contato_a`
+### `atualizar_contato_a`
 
 Funciona perfeitamente.
 
