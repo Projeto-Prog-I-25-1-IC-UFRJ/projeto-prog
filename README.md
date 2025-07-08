@@ -15,7 +15,7 @@ Funciona perfeitamente.
 
 ### `naofunciona/atualizar_contato_a`
 
-Tenta fazer coisas desnecessárias (que não foram pedidas no enunciado) e, por conta disso, é mais vulnerável a erros. Várias coisas não funcionam, por exemplo, não é possível alterar o nome, simplesmente não faz nada.
+Funciona perfeitamente.
 
 ### `atualizar_contato_b`
 
