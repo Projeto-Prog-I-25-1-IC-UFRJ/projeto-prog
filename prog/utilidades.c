@@ -27,10 +27,10 @@ void linha_csv(Contato c, FILE *fp) {
 
 void ler_linha_csv(FILE *fp) {
     char linha[400];
-    int field = 0;
+    int field = 1;
     char *ultima_posicao = linha;
 
-    criar_contato("Nome", "", "", "", "", "");
+    criar_contato("NOMEEE", "", "", "", "", "");
 
     fgets(linha, 400, fp);
     
@@ -48,4 +48,35 @@ void ler_linha_csv(FILE *fp) {
 
     contatinhos[num_contatinhos - 1].num_acessos = atoi(ultima_posicao);
 }
+
+void ler_csv(void) {
+    FILE *fp = fopen("contatinhos.csv", "r");
+
+    // Ignorar HEADER
+    while (getc(fp) != '\n');
+
+    while (!feof(fp)) {
+        ler_linha_csv(fp);
+        if (0 == strcmp(contatinhos[num_contatinhos - 1].nome, "NOMEEE")) {
+            num_contatinhos--;
+            break;
+        }
+    }
+
+    fclose(fp);
+}
+
+void escrever_csv(void) {
+    FILE *fp = fopen("contatinhos.csv", "w");
+
+    fprintf(fp, "Nome,Telefone1,Telefone2,Telefone3,Email,Instagram,Número de Acessos\n");
+
+    for (int i = 0; i < num_contatinhos; i++) {
+        linha_csv(contatinhos[i], fp);
+    }
+
+    fclose(fp);
+}
+
+
 
