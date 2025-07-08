@@ -25,7 +25,8 @@ int main() {
 
 
     for (int i = 0; i < num_contatinhos; i++) {
-        printar_contato(contatinhos[i]);
+        // printar_contato(contatinhos[i]);
+        linha_csv(contatinhos[i], stdout);
     }
 
 
