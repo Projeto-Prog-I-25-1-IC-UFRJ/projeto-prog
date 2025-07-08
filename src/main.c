@@ -23,6 +23,7 @@ int main() {
     atualizar_contato(1, 1, "Carlos Lima");
     contatinhos[3].num_acessos = 3;
 
+    ler_linha_csv(stdin);
 
     for (int i = 0; i < num_contatinhos; i++) {
         // printar_contato(contatinhos[i]);
