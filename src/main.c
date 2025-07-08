@@ -28,15 +28,6 @@ int main() {
         printar_contato(contatinhos[i]);
     }
 
-    Contato top5[5];
-
-    int numero = cinco_contatos(top5);
-
-    printf("\n\n%d\n\n", numero);
-
-    for (int i = 0; i < numero; i++) {
-        printar_contato(top5[i]);
-    }
 
     return 0;
 }
