@@ -15,14 +15,12 @@ int exclui_contato(int indice) { //recebe o indice do contato
 
         num_contatinhos--;//diminue o valor do tamanho da lista de contatos
 
-        printf("O contado com índice %d foi excluido\n", indice);
 
         return 1;
     }
 
     else { //se o contato nao consta na lista a função retorna erro com a mensagem a seguir
 
-        printf("O contado com índice %d não existe\n", indice);
         return -1;
     }
 }

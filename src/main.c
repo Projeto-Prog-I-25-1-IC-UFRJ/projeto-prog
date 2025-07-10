@@ -14,6 +14,8 @@
     raw(); \
     noecho(); \
     keypad(stdscr, TRUE); \
+    timeout(5); \
+    curs_set(0); \
 }
 
 
@@ -45,7 +47,6 @@ int main() {
 
         switch (tela) {
         case TELA_PRINCIPAL:
-        case CONTATOS_COM_LETRA:
         case CINCO_CONTATOS:
             struct Contato cinco[5];
             struct Contato *c;
@@ -54,9 +55,11 @@ int main() {
             if (tela == TELA_PRINCIPAL) {
                 c = contatinhos;
                 num_c = num_contatinhos;
+                printw("LISTA DE CONTATOS\n");
             } else if (tela == CINCO_CONTATOS) {
                 num_c = cinco_contatos(cinco);
                 c = cinco;
+                printw("CINCO MAIS ArESSADOS\n");
             }
 
             const int szl = 7;
@@ -67,10 +70,13 @@ int main() {
                 scroll = 0;
 
             for (int i = scroll; i < num_c; i++) {
-                if (i * szl + 1 - scroll * szl >= LINES)
+                if (i * szl + 2 - scroll * szl >= LINES)
                     break;
                 
-                printw("Contato %d\n", i);
+                if (tela == TELA_PRINCIPAL)
+                    printw("Contato %d\n", i);
+                else
+                    printw("Contato\n");
                 printw("Nome: %s\n", c[i].nome);
                 printw("Telefones: %s   %s   %s\n", c[i].telefone1, c[i].telefone2, c[i].telefone3);
                 printw("Email: %s\n", c[i].email);
@@ -84,7 +90,7 @@ int main() {
         case CRIACAO_DE_CONTATO:
             endwin();
 
-            printf("Para criar um contato, digite uma linha nesse formato:\r\n");
+            printf("Para criar um contato, digite uma linha nesse formato:\n");
             printf("Nome,Telefone1,Telefone2,Telefone3,Email,Instagram,0\n\n");
 
             ler_linha_csv(stdin);
@@ -92,7 +98,93 @@ int main() {
             printf("Pressione enter para voltar à aplicação");
             getchar();
 
+            tela = TELA_PRINCIPAL;
             NCURSES_COMECAR
+            break;
+
+        case CONTATOS_COM_LETRA:
+            endwin();
+
+            printf("Digite a letra para buscar:\n");
+            char letra = getchar();
+            if (letra != '\n') {
+                getchar();
+                printf("\n");
+
+                listar_nomes(letra);
+
+                printf("\nPressione enter para voltar à aplicação");
+                getchar();
+            }
+
+            tela = TELA_PRINCIPAL;
+            NCURSES_COMECAR
+            break;
+
+        case IDENTIFICAR_QUEM_LIGOU:
+            endwin();
+
+            char input[200];
+            printf("Digite o número de telefone:\n");
+            fgets(input, 199, stdin);
+            input[strlen(input) - 1] = '\0';
+            
+            char *output = quem_ligou(input);
+            if (output)
+                printf("\nQUEM LIGOU: %s\n", output);
+            else
+                printf("\nNAO SEI QUEM LIGOU\n");
+
+            printf("\nPressione enter para voltar à aplicação");
+            getchar();
+
+            tela = TELA_PRINCIPAL;
+            NCURSES_COMECAR
+            break;
+
+        case EXCLUIR_CONTATO:
+            endwin();
+
+            printf("Digite o índice do contato que deseja excluir:\n");
+            printf("(Esse número pode ser visto na tela principal)\n");
+
+            int indice = -1;
+            scanf("%d", &indice);
+            if (indice >= 0 && indice < num_contatinhos) {
+            
+                if (exclui_contato(indice) == 1) {
+                    printf("Contato exclúido\n");
+                } else {
+                    printf("Houve um erro\n");
+                }
+
+                printf("\nPressione enter para voltar à aplicação");
+                getchar();
+            }
+
+            tela = TELA_PRINCIPAL;
+            NCURSES_COMECAR
+            break;
+
+        case AGLUTINAR_CONTATOS:
+            endwin();
+
+            printf("Digite os índices do contatos que deseja aglutinar separados por espaços:\n");
+            printf("(Esses números podem serem vistos na tela principal)\n");
+
+            int indice1 = -1, indice2 = -1;
+            scanf("%d %d", &indice1, &indice2);
+            if (indice1 >= 0 && indice1 < num_contatinhos && indice2 >= 0 && indice2 < num_contatinhos) {
+            
+                aglutinar_contatos(indice1, indice2);
+
+                printf("\nPressione enter para voltar à aplicação");
+                getchar();
+            }
+
+            tela = TELA_PRINCIPAL;
+            NCURSES_COMECAR
+            break;
         }
 
         refresh();
@@ -102,6 +194,7 @@ int main() {
         case CTRL('c'):
         case 'q':
             endwin();
+            printf("\n");
             return 0;
 
         case 27:
