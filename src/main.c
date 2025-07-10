@@ -54,6 +54,7 @@ int main() {
                 "ESC         - voltar para a tela principal\n"
                 "c           - criar um contato\n"
                 "i           - identificar quem ligou\n"
+                "e           - editar/atualizar um contato\n"
                 "x           - excluir um contato\n"
                 "a           - aglutinar contatos\n"
                 "n           - adicionar 9 a todos os contatos\n"
@@ -143,7 +144,7 @@ int main() {
         case IDENTIFICAR_QUEM_LIGOU:
             endwin();
 
-            char input[200];
+            char input[200] = "";
             printf("Digite o número de telefone:\n");
             fgets(input, 199, stdin);
             input[strlen(input) - 1] = '\0';
@@ -161,7 +162,7 @@ int main() {
             NCURSES_COMECAR
             break;
 
-        case EXCLUIR_CONTATO:
+        case EXCLUIR_CONTATO: {
             endwin();
 
             printf("Digite o índice do contato que deseja excluir:\n");
@@ -185,7 +186,50 @@ int main() {
             tela = TELA_PRINCIPAL;
             NCURSES_COMECAR
             break;
+        }
+        case EDICAO_DE_CONTATO: {
+            endwin();
 
+            printf("Digite o índice do contato que deseja editar:\n");
+            printf("(Esse número pode ser visto na tela principal)\n");
+
+            int indice = -1;
+            scanf("%d", &indice);
+            getchar();
+            if (indice >= 0 && indice < num_contatinhos) {
+                printf("Agora digite o número do campo que deseja editar:\n");
+                printf("1 = nome\n");
+                printf("2 = telefone 1\n");
+                printf("3 = telefone 2\n");
+                printf("4 = telefone 3\n");
+                printf("5 = email\n");
+                printf("6 = instagram\n\n");
+
+                int cod_inf = -1;
+                scanf("%d", &cod_inf);
+                getchar();
+                if (cod_inf >= 1 && cod_inf <= 6) {
+                    printf("Agora, digite o novo valor para o campo:\n");
+
+                    char input[200] = "";
+                    fgets(input, 199, stdin);
+                    input[strlen(input) - 1] = '\0';
+
+                    atualizar_contato(indice, cod_inf, input);
+                } else {
+                    printf("Campo inválido\n");
+                }
+            } else {
+                printf("Índice inválido\n");
+            }
+
+            printf("\nPressione enter para voltar à aplicação");
+            getchar();
+
+            tela = TELA_PRINCIPAL;
+            NCURSES_COMECAR
+            break;
+        }
         case AGLUTINAR_CONTATOS:
             endwin();
 
@@ -252,6 +296,10 @@ int main() {
 
         case 'x':
             tela = EXCLUIR_CONTATO;
+            break;
+
+        case 'e':
+            tela = EDICAO_DE_CONTATO;
             break;
 
         case 'a':
