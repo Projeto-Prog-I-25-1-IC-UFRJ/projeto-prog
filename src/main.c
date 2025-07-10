@@ -60,6 +60,7 @@ int main() {
                 "n           - adicionar 9 a todos os contatos\n"
                 "l           - contatos que começam com uma letra\n"
                 "r           - cinco contatos mais acessados\n"
+                "s ou Ctrl-S - salvar contatos\n"
                 "j ou <seta para baixo> - scroll para baixo\n"
                 "k ou <seta para cima> - scroll para cima"
             );
@@ -281,6 +282,11 @@ int main() {
             endwin();
             printf("\n");
             return 0;
+
+        case CTRL('s'):
+        case 's':
+            escrever_csv();
+            break;
 
         case 27:
             tela = TELA_PRINCIPAL;
