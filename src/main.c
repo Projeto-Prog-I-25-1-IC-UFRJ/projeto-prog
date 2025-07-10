@@ -31,7 +31,8 @@ enum tela {
     AGLUTINAR_CONTATOS,
     ADICIONAR_NOVE,
     CONTATOS_COM_LETRA,
-    CINCO_CONTATOS
+    CINCO_CONTATOS,
+    TELA_AJUDA
 };
 
 int main() {
@@ -43,11 +44,29 @@ int main() {
     int scroll = 0;
 
     while (1) {
-        clear();
 
         switch (tela) {
+        case TELA_AJUDA:
+            clear();
+            printw(
+                "q ou Ctrl-C - fechar programa\n"
+                "h           - tela de ajuda\n"
+                "ESC         - voltar para a tela principal\n"
+                "c           - criar um contato\n"
+                "i           - identificar quem ligou\n"
+                "x           - excluir um contato\n"
+                "a           - aglutinar contatos\n"
+                "n           - adicionar 9 a todos os contatos\n"
+                "l           - contatos que começam com uma letra\n"
+                "r           - cinco contatos mais acessados\n"
+                "j ou <seta para baixo> - scroll para baixo\n"
+                "k ou <seta para cima> - scroll para cima"
+            );
+
+            break;
         case TELA_PRINCIPAL:
         case CINCO_CONTATOS:
+            clear();
             struct Contato cinco[5];
             struct Contato *c;
             int num_c = 0;
@@ -249,6 +268,10 @@ int main() {
 
         case 'r':
             tela = CINCO_CONTATOS;
+            break;
+
+        case 'h':
+            tela = TELA_AJUDA;
             break;
 
         case 'j':
