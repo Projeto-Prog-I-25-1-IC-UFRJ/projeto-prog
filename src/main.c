@@ -150,6 +150,7 @@ int main() {
 
             int indice = -1;
             scanf("%d", &indice);
+            getchar();
             if (indice >= 0 && indice < num_contatinhos) {
             
                 if (exclui_contato(indice) == 1) {
@@ -174,9 +175,30 @@ int main() {
 
             int indice1 = -1, indice2 = -1;
             scanf("%d %d", &indice1, &indice2);
+            getchar();
             if (indice1 >= 0 && indice1 < num_contatinhos && indice2 >= 0 && indice2 < num_contatinhos) {
             
                 aglutinar_contatos(indice1, indice2);
+
+                printf("\nPressione enter para voltar à aplicação");
+                getchar();
+            }
+
+            tela = TELA_PRINCIPAL;
+            NCURSES_COMECAR
+            break;
+        
+        case ADICIONAR_NOVE:
+            endwin();
+
+            printf("Quantos dígitos os telefones devem ter?\n");
+
+            int num_digitos = -1;
+            scanf("%d", &num_digitos);
+            getchar();
+            if (num_digitos >= 0) {
+                int r = adicionar_nove(num_digitos);
+                printf("Modificados %d telefones\n", r);
 
                 printf("\nPressione enter para voltar à aplicação");
                 getchar();
