@@ -43,13 +43,42 @@ int main() {
     while (1) {
         clear();
 
-        switch(tela) {
+        switch (tela) {
         case TELA_PRINCIPAL:
-        case IDENTIFICAR_QUEM_LIGOU:
         case CONTATOS_COM_LETRA:
-            break;
-
         case CINCO_CONTATOS:
+            struct Contato cinco[5];
+            struct Contato *c;
+            int num_c = 0;
+
+            if (tela == TELA_PRINCIPAL) {
+                c = contatinhos;
+                num_c = num_contatinhos;
+            } else if (tela == CINCO_CONTATOS) {
+                num_c = cinco_contatos(cinco);
+                c = cinco;
+            }
+
+            const int szl = 7;
+            
+            if (scroll > num_c - LINES / 2 / szl)
+                scroll = num_c - LINES / 2 / szl;
+            if (scroll < 0)
+                scroll = 0;
+
+            for (int i = scroll; i < num_c; i++) {
+                if (i * szl + 1 - scroll * szl >= LINES)
+                    break;
+                
+                printw("Contato %d\n", i);
+                printw("Nome: %s\n", c[i].nome);
+                printw("Telefones: %s   %s   %s\n", c[i].telefone1, c[i].telefone2, c[i].telefone3);
+                printw("Email: %s\n", c[i].email);
+                printw("Insta: %s\n", c[i].instagram);
+                printw("N. Acessos: %u\n", c[i].num_acessos);
+                printw("\n");
+            }
+
             break;
 
         case CRIACAO_DE_CONTATO:
@@ -106,18 +135,18 @@ int main() {
         case 'r':
             tela = CINCO_CONTATOS;
             break;
+
+        case 'j':
+        case KEY_DOWN:
+            scroll += 1;
+            break;
+        case 'k':
+        case KEY_UP:
+            scroll -= (scroll > 0);
+            break;
         }
     }
     
-    /*
-
-    for (int i = 0; i < num_contatinhos; i++) {
-        // printar_contato(contatinhos[i]);
-        linha_csv(contatinhos[i], stdout);
-    }
-
-    escrever_csv();
-    */
 
     endwin();
     return 0;
