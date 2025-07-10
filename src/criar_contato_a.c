@@ -25,6 +25,5 @@ int criar_contato(char nome[], char tel1[], char tel2[], char tel3[], char email
     contatos[pos].num_acessos = 0;
 
     pos++;
-    printf("Contato salvo com sucesso\n");
     return 1;
 }
